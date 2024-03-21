@@ -31,7 +31,7 @@ export default class UsersService {
         }
     }
 
-    async fetchStudent (id: string): Promise<void> {
+    async fetchStudent (id: number): Promise<void> {
         try {
             const json = await fetch(url + '/' + id)
             const response = await json.json()
@@ -41,7 +41,7 @@ export default class UsersService {
         }
     }
 
-    async postStudent (name: string, email: string, group: string) {
+    async createStudent (name: string, email: string, group: string) {
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -52,6 +52,21 @@ export default class UsersService {
                 body: JSON.stringify({name, email, group})
             })
             const result = await response.json()
+            console.log(result)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    async deleteStudent(id: number): Promise<void> {
+        try {
+            const respose = await fetch(url + '/' + id, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type' : 'application/json'
+                }
+            })
+            const result = await respose.json()
             console.log(result)
         } catch (error) {
             console.log(error)
