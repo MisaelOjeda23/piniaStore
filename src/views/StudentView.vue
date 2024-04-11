@@ -2,11 +2,11 @@
     <div>
         <h1>Estudiante {{ stu?.name }}</h1>
         <div>
-            id: {{ stu?.id }}
+            id: {{ student.student?.id }}
             <br><br>
-            email: {{ stu?.email }}
+            email: {{ student.student?.email }}
             <br><br>
-            grupo: {{ stu?.group }}
+            grupo: {{ student.student?.group }}
         </div>
     </div>
 </template>

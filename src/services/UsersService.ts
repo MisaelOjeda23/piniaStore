@@ -2,7 +2,7 @@ import type IStudents from "@/interfaces/IStudents";
 import type { Ref } from "vue";
 import { ref } from "vue";
 
-const url = "https://65e8dab54bb72f0a9c508303.mockapi.io/dev/api/Alumnos"
+const url = "https://65e8dab54bb72f0a9c508303.mockapi.io/dev/apy/Alumnos"
 
 export default class UsersService {
     private students: Ref<IStudents[]> 

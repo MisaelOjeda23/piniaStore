@@ -1,17 +1,18 @@
 import { ref, computed } from 'vue'
+import type {Ref} from 'vue'
 import { defineStore } from 'pinia'
 import type IStudents from '@/interfaces/IStudents'
 import UsersService from '@/services/UsersService'
 
 export const useStudentStore = defineStore('students', () => {
-    const students = ref<IStudents[]>([])
-    const student = ref<IStudents>()
+    const students:Ref<IStudents[]> = ref([])
+    const student:Ref<IStudents> = ref({}) as Ref<IStudents>
     const service = new UsersService()
 
     async function fetchStudents () {
         try {   
             await service.fetchAll()
-            students.value = service.getStudents().value
+            students.value = await service.getStudents().value
         } catch (error) {
             console.log(error)
         }

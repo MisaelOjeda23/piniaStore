@@ -43,6 +43,7 @@ const send = async (e: any) => {
     }
 
     service.createStudent(student.name, student.email, student.group)
+    return alert("registro completado")
 }
 </script>
 

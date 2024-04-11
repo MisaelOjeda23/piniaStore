@@ -12,6 +12,7 @@
                     <br><br>
                     {{ index + 1 }} | {{ student.email }}
                     </RouterLink>
+                    <br><br>
                     <button @click="deleteStudent(student.id)">Eliminar</button>
                 </li>
             </ul>
